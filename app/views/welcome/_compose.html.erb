@@ -1,0 +1,13 @@
+<div class="item-inner">
+  <%= link_to "return to select other politicians", "#", :id => "return-address" %>
+  <h1>compose your tweet(s)</h1>
+
+  <div id="compose-holder">
+    <%= text_field_tag 'tweet-content', nil, :placeholder => 'Compose your tweet...', :size => 60 %>
+    <p>include << recipient >> where you'd like the politicians twitter handle in your message </p>
+  </div>
+
+  <%= render :partial => "politicians/selected_politicians" %>
+
+  <%= link_to "send your tweets","#", :id => "submit-button", :class => "btn btn-large btn-block btn-primary" %>
+</div>

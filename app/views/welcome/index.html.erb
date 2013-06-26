@@ -1,0 +1,20 @@
+<% if @current_user %>
+<div id="carousel-container">
+  <ul id="user-status">
+    <li id="address" class="active">address</li>
+    <li id="compose">compose</li>
+    <li id="share">share</li>
+  </ul>
+
+  <div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="active item"><%= render :partial => 'address' %></div>
+      <div class="item"><%= render :partial => 'compose' %></div>
+      <div class="item"><%= render :partial => 'share' %></div>
+    </div>
+  </div>
+</div>
+  
+<% else %>
+  <%= render :partial => 'landing' %>
+<% end %>

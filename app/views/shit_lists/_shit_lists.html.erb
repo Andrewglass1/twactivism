@@ -1,0 +1,19 @@
+<ul id="shit-lists">
+  <% ShitList.all.each do |sl| %>
+    <li>
+      <a href="#" id="<%= sl.id %>" class="shit-list-link"
+         data-poli-ids="<%= sl.politician_ids %>">
+         <%= sl.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<script id="stache-shitlist" type="text/x-mustache">
+    <li>
+      <a href="#" id="{{id}}" class="shit-list-link"
+         data-poli-ids="{{poli_ids}}">
+         {{title}}
+      </a>
+    </li>
+</script>

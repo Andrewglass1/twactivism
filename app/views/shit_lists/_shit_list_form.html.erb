@@ -1,0 +1,21 @@
+<p>Name your shit list:</p>
+<%= text_field_tag 'title',nil, :placeholder => 'Sl name', :id => 'shitlist-title' %>
+
+<p>Select politicians</p>
+<select data-placeholder="Select Politicians for a shit list" id="shitlist-create" multiple style="width:350px;" tabindex="4">
+  <% Politician.all.each do |poli| %>
+    <option value="<%= poli.id %>" data-name="<%= poli.name%>"
+            data-image="<%= poli.avatar %>">
+      <%= poli.name %>
+    </option>
+  <% end %>
+</select>
+
+<p>Whats it all about?</p>
+<%= text_area_tag 'about', nil, :size => "125x5", :id => "shitlist-about" %>
+
+<p>How can people learn more?</p>
+<%= text_area_tag 'more', nil, :size => "125x5", :id => "shitlist-more" %>
+
+<button id="shitlist-submit" class="btn btn-primary btn-block">Create a Shit List!</button>
+
